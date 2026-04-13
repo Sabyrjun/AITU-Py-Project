@@ -1,220 +1,147 @@
-#Write a program that asks the user to enter a score.  If the score is 50 or higher, print You passed
-# Otherwise, print You failed
-"""
-a = int(input())
-if a <= 50:
-    print("You pass")
+'''
+#1
+nums = list(map(int, input("Введите числа через пробел: ").split()))
+
+if len(nums) < 2:
+    print("Нужно как минимум два числа")
 else:
-    print("You fail")
+    max1 = max2 = float('-inf')
 
+    for n in nums:
+        if n > max1:
+            max2 = max1
+            max1 = n
+        elif n > max2 and n != max1:
+            max2 = n
 
-#Write a program that asks the user to enter a day of the week.  If the day is Saturday or Sunday, print Weekend
-# Otherwise, print Weekday
-
-a = input()
-if a == 'Saturday' or a == 'Sunday':
-    print("Weekend")
-else:
-    print("Weekday")
-
-
-#Task 3. Numbers from 1 to 5
-#Use a while loop to print numbers from 1 to 5.
-
-a = 0
-while a < 5:
-    print(a+1)
-    a += 1
-
-a = input()
-b = len(a)
-for i in range(b):
-    print(a[i])
-
-
-#Task 5. Uppercase and Lowercase
-#Ask the user to enter a word.
-#Print:  the word in uppercase  the word in lowercase
-
-
-a = input()
-b = a.upper()
-c = a.lower()
-print(b, c, sep='\n')
-
-
-
-
-nums = [1, 2, 3, 4, 5]
-print(nums[1])
-nums.append(10)
-
-a = [1, 2, 3, 4, 5]
-print(a[:3])
-print(a[-2:])
-print(3 in a)
-
-print(list(set([1, 2, 2, 3, 4, 4])))
-A = {1, 2, 3}
-B = {2, 3, 4}
-print(A & B)
-
-d = {"name": "Ali", "age": 20}
-d["city"] = "Astana"
-print(d["name"])
-"""
-from os.path import sep
-
-"""
-#task 1
-a = int(input())
-b = int(input())
-if a < b:
-    c = a
-    a = b
-    b = c
-    print(a-b)
-else:
-    print(a-b)
-"""
-
-"""
-#task 2
-
-a=int(input())
-for i in range(0, a+1, 2):
-    print(i, end=" ")
-"""
-
-"""
-#task 3
-a = int(input())
-for i in range(a, -1, -1):
-    print(i, end=" ")
-"""
-"""
-#task 4
-a = int(input())
-if a > 500:
-    print("TOTAL: ", a*0.9,  "USD Thank you!")
-else:
-    print("No discount")
-"""
-
-"""
-#task 5
-a = input()
-b = int(a[0])+int(a[1])+int(a[2])
-c = int(a[3])+int(a[4])+int(a[5])
-if b == c:
-    print("Yes")
-else:
-    print("No")
-"""
-
-"""
-#task 6
-D, t1, t2 = map(int, input().split())
-v1 = 15/t1
-v2 = (D - 15)/t2
-if v1 > v2:
-    print("before")
-else:
-    print("after")
-"""
-
-'''
-#task 7
-a = 1
-sum = 0
-counter = 0
-
-while a == 1:
-    b = int(input())
-    if b == 0:
-        break
-    sum += b
-    counter += 1
-avg = sum/counter
-print(sum, avg, sep='\n')
+    print("Второй по величине элемент:", max2)
 '''
 
 '''
-#task 8
-a = 1
-max = 0
-min = 0
+#2
+L = [1, 2, 3, 4, 5]
 
-while a == 1:
-    b = int(input())
-    if b == 0:
-        break
-    if b >= max:
-        max = b
-    if b <= min:
-        min = b
-print(max, min, sep='\n')
+rotated_L = [L[-1]] + L[:-1]
+
+print(rotated_L)
 '''
 
 '''
-#task 9
-a = 1
-odd = 0
-while a == 1:
-    b = int(input())
-    if b == 0:
-        break
-    if b%2 == 1:
-        sum += b
-print(sum)
+#3
+nums = list(map(int, input("Введите числа списка: ").split()))
+
+even_list = []
+odd_list = []
+
+for n in nums:
+    if n % 2 == 0:
+        even_list.append(n)
+    else:
+        odd_list.append(n)
+
+print("Четные:", even_list)
+print("Нечетные:", odd_list)
 '''
 
 '''
-#task 10
-a = 1
-sum = 0
-counter = 0
-max = None
-min = None
-odd = 0
+#4
+L = [[1, 2], [3, 4], [5]]
+flat_list = []
 
-while a == 1:
-    b = int(input())
-    if b == 0:
-        break
-    sum += b
-    counter += 1
-    if max is None or b > max:
-        max = b
-    if min is None or b < min:
-        min = b
-    if b % 2 == 1:
-        odd += b
-avg = sum/counter
-print('Sum: ', sum, '\n' 'Avg: ', avg, '\n' 'Min: ', min, '\n' 'Max: ', max, '\n' 'Odd sum: ', odd)
+for sublist in L:
+    for item in sublist:
+        flat_list.append(item)
+
+print(flat_list)
 '''
 
+'''
+#5
+t = (1, 2, 2, 3, 2, 4)
+count_2 = t.count(2)
+print("Число 2 встречается:", count_2, "раза")
+'''
 
+'''
+#6
+t = (1, 2, 3)
+temp_list = list(t)
+temp_list.append(4)
+t_modified = tuple(temp_list)
+print(t_modified)
+'''
 
+'''
+#7
+t = (10, 20, 30)
+a, b, c = t
+print("a =", a)
+print("b =", b)
+print("c =", c)
+'''
 
+'''
+#8
+t = ((1, 5), (2, 3), (7, 1))
+max_tuple = max(t, key=sum)
+print("Кортеж с наибольшей суммой:", max_tuple)
+'''
 
+'''
+#9
+user_input = input("Введите числа через пробел: ")
+nums = list(map(int, user_input.split()))
+unique_nums = list(set(nums))
+print("Уникальные числа:", unique_nums)
+'''
 
+'''
+#10
+A = {1, 2}
+B = {1, 2, 3, 4}
+is_subset = A.issubset(B)
+print("A является подмножеством B:", is_subset)
+'''
 
+'''
+#11
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+sym_diff = set1 ^ set2
+print("Симметричная разность:", sym_diff)
+'''
 
+'''
+#12
+word = "programming"
+unique_chars = set(word)
+print("Уникальные символы:", unique_chars)
+'''
+'''
+#13
+L = [2, 7, 11, 15]
+target = 9
+for i in range(len(L)):
+    for j in range(i + 1, len(L)):
+        if L[i] + L[j] == target:
+            print("Найдены числа:", L[i], "и", L[j])
+'''
 
+'''
+#14
+L = [1, 2, 2, 3, 4, 4, 5]
+unique_elements = [x for x in L if L.count(x) == 1]
+print(unique_elements)
+'''
 
-
-
-
-
-
-
-
-
-
-
-
-
+'''
+#15
+L1 = [1, 2, 3, 4]
+L2 = [2, 3, 5]
+L3 = [2, 3, 6]
+common_elements = list(set(L1) & set(L2) & set(L3))
+print(common_elements)
+'''
 
 
 
