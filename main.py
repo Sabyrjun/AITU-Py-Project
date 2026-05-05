@@ -29,7 +29,7 @@ students_sorted = sorted(students, key=lambda x: x[1], reverse=True)
 class Movie:
     def __init__(self, title, rating):
         self.title = title
-        self.rating = rating
+        self.rating = rating    
 
     def is_recommended(self):
         return self.rating >= 8
